@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Schoolbell&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="smolstyle.css" />
+    <title>smol meditation</title>
+</head>
+
+<body>
+    <div id="rain">
+        <i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i>
+    </div>
+    <div class="app">
+        <div class="navbar">
+            <h1> time for a smol meditation? </h1>
+        </div>
+        <div class="time-select">
+            <h3> pick a timer: </h3>
+            <button data-time="600">10 min.</button>
+            <button data-time="1500" class="medium-mins">25 min.</button>
+            <button data-time="2700" class="long-mins">45 min.</button>
+        </div>
+        <div class="player-container">
+            <audio class="song">
+                <source src="rain.mp3" />
+            </audio>
+            <img src="play.svg" class="play"></img>
+            <svg class="track-outline" width="453" height="453" viewBox="0 0 453 453" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="226.5" cy="226.5" r="216.5" stroke="white" stroke-width="20" />
+            </svg>
+            <svg class="moving-outline" width="453" height="453" viewBox="0 0 453 453" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="226.5" cy="226.5" r="216.5" stroke="#474747" stroke-width="20" />
+            </svg>
+            <img src="replay.svg" class="replay"></img>
+            <h3 class="time-display">0m</h3>
+        </div>
+        <div class="sound-picker">
+            <h3>pick a mood:</h3>
+            <button data-sound="rain.mp3" onclick="rainy()"><img src="rain.svg" alt=""></button>
+            <button data-sound="beach.mp3" onclick="sunny()"><img src="beach.svg" alt=""></button>
+        </div>
+    </div>
+    <script src="smolapp.js"></script>
+    <script>
+    function rainy() {
+        var element = document.body;
+        element.classList.toggle("rainbody");
+        element.classList.toggle("sunbody", false);
+        var other = document.getElementById("rain");
+        other.style.display = "block";
+    }
+    </script>
+    <script>
+    function sunny() {
+        var element = document.body;
+        element.classList.toggle("sunbody");
+        element.classList.toggle("rainbody", false);
+        var other = document.getElementById("rain");
+        if (other.style.display === "none") {
+            other.style.display = "block";
+        } else {
+            other.style.display = "none";
+        }
+    }
+    </script>
+</body>
+
+</html>
